@@ -15,8 +15,9 @@ async def on_ready():
 @client.event
 async def on_voice_state_update(member, before, after):
     global runA
+    print(str(member))
     afterS = str(after)
-    if(afterS.find("VoiceChannel") > 0 and str(member) == "owen1050#2567" and runA):#WillBusler#8383"):
+    if(afterS.find("VoiceChannel") > 0 and str(member) == "WillBusler#8383" and runA):#WillBusler#8383"):
         
         i0 = afterS.find("VoiceChannel") + 16
         i1 = afterS.find(" ", i0)
@@ -26,7 +27,23 @@ async def on_voice_state_update(member, before, after):
         vc.play(discord.FFmpegPCMAudio(executable="C:/ffmpeg/bin/ffmpeg.exe", source="play.mp3"))
         while(vc.is_playing()):
             pass
+        print("done")
+        vc.pause()
+        vc.resume()
+        vc.stop()
+        await vc.disconnect()
+
+    if(afterS.find("VoiceChannel") > 0 and str(member) == "Zacgh#8383" and runA):#WillBusler#8383"):
         
+        i0 = afterS.find("VoiceChannel") + 16
+        i1 = afterS.find(" ", i0)
+        print(afterS[i0:i1])
+        channel = client.get_channel(int(afterS[i0:i1]))
+        vc = await channel.connect()
+        vc.play(discord.FFmpegPCMAudio(executable="C:/ffmpeg/bin/ffmpeg.exe", source="wahterver.mp3"))
+        while(vc.is_playing()):
+            pass
+        print("done")
         vc.pause()
         vc.resume()
         vc.stop()
@@ -47,18 +64,7 @@ async def on_message(message):
 
     
     print(s)
-    if(str(s).find("wakeUpOwen") > 0):
-        print("wakeip")
-        r = requests.get(offlink)
-        time.sleep(3)
-        r = requests.get(onlink)
-        time.sleep(3)
-        r = requests.get(offlink)
-        time.sleep(3)
-        r = requests.get(onlink)
-        time.sleep(3)
-        r = requests.get(offlink)
-        time.sleep(3)
+    
         
 
-client.run('Njk2MDQwMDA5MzE2MTcxODA3.Xolitw.K4hfvjKSHxnbkLpU3mgaWB1jfZ8')
+client.run('')
