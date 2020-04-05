@@ -63,4 +63,4 @@ async def on_message(message):
         time.sleep(3)
         
 
-client.run('Njk2MDQwMDA5MzE2MTcxODA3.XokqyA.g0LOBS3jsq4IbLpuPrt1A8L3_4Y')
+client.run('')
