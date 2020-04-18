@@ -1,0 +1,19 @@
+/|\signup
+	user gets added to waitingOnAudio.txt
+*user in waitingOnAudio.txt send audio file*
+	add the file to /audio/*username*.mp3
+	add user to userList.txt
+
+/|\disable
+	if user in userList move to diable.txt
+	if user not in userList say not in user list
+
+/|\enable 
+	if user in disable.txt move to userList.txt
+	is not in disable say "user not disabled, maybe you mesnt to sign up"
+
+/|\change_audio 
+	if user in userList.txt, delete /audio/*username*.mp3, move them to waitingOnAudio,  and replace it with next file 
+/|\stop
+	removes the bot from whatever channel he may be in
+
