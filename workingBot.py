@@ -30,19 +30,6 @@ async def on_message(message):
     global runA
     afterS = str(message)
     #print(str(message.attachments))
-    fURL = str(message.attachments)
-    pos = fURL.find("url")+5
-    if(pos > 0):
-        pos2 = fURL.find("'", pos)
-        url = fURL[pos:pos2]
-        if(url[4] == "s"):
-            url = url[0:4] + url[5:]
-        print(url)
-        myFile = requests.get(url)
-        open("test.png", 'wb').write(myFile.content)
-        
-        
-    
     
     s = 'Message from {0.author}: {0.content}'.format(message)
     print(s)
